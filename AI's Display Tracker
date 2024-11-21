@@ -1,3 +1,17 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+
+# Sample word lists
+words_of_length_3 = ['cat', 'dog', 'bat', 'rat', 'sun', 'sky', 'car', 'bus', 'pen', 'box', 'cup', 'hat', 'key', 'map', 'net', 'owl', 'pig', 'pot', 'red', 'run', 'sea', 'top', 'toy', 'van', 'war', 'win', 'zip']
+words_of_length_4 = ['tree', 'book', 'fish', 'lamp', 'door', 'frog', 'wolf', 'bear', 'lion', 'ship', 'star', 'moon', 'rock', 'fire', 'wind', 'rain', 'snow', 'sand', 'wave', 'leaf', 'bird', 'duck', 'goat', 'deer', 'wolf', 'hawk', 'crab', 'clam', 'frog', 'toad', 'worm', 'moth', 'beet', 'corn', 'rice', 'bean', 'pear', 'plum', 'kiwi', 'lime', 'date', 'figs', 'nuts', 'cake', 'milk', 'soda', 'wine', 'beer', 'meat', 'tofu']
+words_of_length_5 = ['apple', 'bread', 'chair', 'dance', 'eagle', 'flame', 'grape', 'house', 'igloo', 'jelly', 'knife', 'lemon', 'melon', 'night', 'ocean', 'piano', 'queen', 'robot', 'snake', 'tiger', 'uncle', 'vivid', 'whale', 'xenon', 'yacht', 'zebra', 'angel', 'beach', 'candy', 'dream', 'earth', 'flute', 'giant', 'heart', 'inbox', 'jolly', 'koala', 'lemon', 'magic', 'ninja', 'olive', 'pearl', 'quilt', 'raven', 'sheep', 'tulip', 'urban', 'viper', 'wheat', 'xerox', 'youth', 'zesty', 'amber', 'baker', 'cabin', 'delta', 'eager', 'fable', 'globe', 'honey', 'index', 'jewel', 'karma', 'lunar', 'mango', 'noble', 'opera', 'peach', 'quack', 'rider', 'sugar', 'tango', 'ultra', 'vocal', 'wrist', 'xylos', 'yield', 'zonal']
+
+# Function to pick a random word from the list
+def word_picker(words):
+    return random.choice(words)
+
+# Function to display the hangman stages
 def display_hangman(incorrect_guesses):
     stages = [
         """
@@ -65,47 +79,118 @@ def display_hangman(incorrect_guesses):
         """
     ]
     return stages[incorrect_guesses]
-def guess_letters(word):
+
+# Function to start the game
+def start_game():
+    global word_to_guess, word_completion, guessed_letters, incorrect_guesses, score
+    length = int(word_length_var.get())
+    if length == 3:
+        word_list = words_of_length_3
+    elif length == 4:
+        word_list = words_of_length_4
+    elif length == 5:
+        word_list = words_of_length_5
+    else:
+        messagebox.showerror("Error", "Please enter a valid length (3, 4, or 5).")
+        return
+
+    word_to_guess = word_picker(word_list)
+    word_completion = ['_'] * len(word_to_guess)
     guessed_letters = set()
     incorrect_guesses = 0
-    max_incorrect_guesses = 6
-    word_completion = ['_'] * len(word)
-    word_lower = word.lower()  # Convert the word to lowercase for case-insensitive comparison
     score = 0
+    update_display()
 
-    while incorrect_guesses < max_incorrect_guesses:
-        print(display_hangman(incorrect_guesses))
-        print(f"Score: {score}")
-        print(f"Word: {' '.join(word_completion)}")
-        guess_letter = input("Enter your guess: ").lower()
+# Function to update the display
+def update_display():
+    hangman_label.config(text=display_hangman(incorrect_guesses))
+    word_label.config(text=' '.join(word_completion))
+    score_label.config(text=f"Score: {score}")
 
-        if len(guess_letter) != 1 or not guess_letter.isalpha():
-            print("Please enter a single letter.")
-            continue
+# Function to handle the guess
+def guess_letter():
+    global incorrect_guesses, score
+    guess = guess_entry.get().lower()
+    guess_entry.delete(0, tk.END)
 
-        if guess_letter in guessed_letters:
-            print("You have already guessed that letter. Try again.")
-            continue
+    if len(guess) != 1 or not guess.isalpha():
+        messagebox.showerror("Error", "Please enter a single letter.")
+        return
 
-        guessed_letters.add(guess_letter)
+    if guess in guessed_letters:
+        messagebox.showinfo("Info", "You have already guessed that letter. Try again.")
+        return
 
-        if guess_letter in word_lower:
-            for i, letter in enumerate(word_lower):
-                if letter == guess_letter:
-                    word_completion[i] = word[i]  # Use the original case of the letter in the word
-            if '_' not in word_completion:
-                print(f"Congratulations! You guessed the word: {''.join(word_completion)}")
-                score += 1
-                incorrect_guesses = max(0, incorrect_guesses - 3)  # Decrease incorrect guesses by 3 or set to 0
-                break
-        else:
-            incorrect_guesses += 1
-            print(f"Incorrect guess. You have {max_incorrect_guesses - incorrect_guesses} guesses left.")
+    guessed_letters.add(guess)
 
-    if incorrect_guesses == max_incorrect_guesses:
-        print(display_hangman(incorrect_guesses))
-        print(f"Sorry, you ran out of guesses. The word was: {word}")
+    if guess in word_to_guess.lower():
+        for i, letter in enumerate(word_to_guess.lower()):
+            if letter == guess:
+                word_completion[i] = word_to_guess[i]  # Use the original case of the letter in the word
+        if '_' not in word_completion:
+            score += 1
+            incorrect_guesses = max(0, incorrect_guesses - 3)  # Decrease incorrect guesses by 3 or set to 0
+            messagebox.showinfo("Congratulations!", f"You guessed the word: {''.join(word_completion)}")
+            start_game()
+    else:
+        incorrect_guesses += 1
+        if incorrect_guesses == 6:
+            messagebox.showinfo("Game Over", f"Sorry, you ran out of guesses. The word was: {word_to_guess}")
+            start_game()
 
-if __name__ == "__main__":
-    word_to_guess = "Example"  # Replace with a word of your choice or use a word picker function
-    guess_letters(word_to_guess)
+    update_display()
+
+# Create the main window
+root = tk.Tk()
+root.title("Hangman Game")
+
+# Create and place widgets
+word_length_var = tk.StringVar(value="3")
+tk.Label(root, text="Enter the length of the word you want to guess (3, 4, or 5):").pack()
+tk.Entry(root, textvariable=word_length_var).pack()
+tk.Button(root, text="Start Game", command=start_game).pack()
+
+hangman_label = tk.Label(root, text="", font=("Courier", 18))
+hangman_label.pack()
+
+word_label = tk.Label(root, text="", font=("Courier", 18))
+word_label.pack()
+
+score_label = tk.Label(root, text="Score: 0", font=("Courier", 18))
+score_label.pack()
+
+tk.Label(root, text="Enter your guess:").pack()
+guess_entry = tk.Entry(root)
+guess_entry.pack()
+tk.Button(root, text="Guess", command=guess_letter).pack()
+
+# Start the main event loop
+root.mainloop()
+
+# How it works: 
+#Explanation:
+#Word Lists:
+
+#words_of_length_3, words_of_length_4, and words_of_length_5 contain lists of words of lengths 3, 4, and 5, respectively.
+#word_picker Function:
+
+#This function takes a list of words and returns a randomly picked word from the list using random.choice.
+#display_hangman Function:
+
+#This function takes the number of incorrect guesses and returns the corresponding stage of the hangman drawing.
+#start_game Function:
+
+#This function initializes the game by picking a random word based on the selected length, resetting the guessed letters and incorrect guesses, and updating the display.
+#update_display Function:
+
+#This function updates the hangman drawing, the current state of the guessed word, and the score.
+#guess_letter Function:
+
+#This function handles the user's guess, updates the game state, and checks for win/loss conditions.
+#GUI Setup:
+
+#The tkinter library is used to create the main window and widgets for the game.
+#Widgets include labels, entry fields, and buttons for starting the game and making guesses.
+#Main Event Loop:
+
+#The root.mainloop() call starts the main event loop, allowing the GUI to respond to user interactions.
