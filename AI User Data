@@ -1,0 +1,69 @@
+import json
+import os
+
+def load_user_data(filename='user_data.json'):
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            return json.load(file)
+    return {}
+
+def save_user_data(user_data, filename='user_data.json'):
+    with open(filename, 'w') as file:
+        json.dump(user_data, file, indent=4)
+
+def create_or_get_user(user_data):
+    username = input("Enter your username: ")
+    if username not in user_data:
+        print("New user detected. Creating profile...")
+        user_data[username] = {
+            'high_score': 0,
+            'games_played': 0,
+            'total_words_guessed': 0
+        }
+    return username
+
+def update_statistics(user_data, username, score, words_guessed):
+    user_data[username]['games_played'] += 1
+    user_data[username]['total_words_guessed'] += words_guessed
+    if score > user_data[username]['high_score']:
+        user_data[username]['high_score'] = score
+
+def display_statistics(user_data, username):
+    user_stats = user_data[username]
+    average_words_per_game = user_stats['total_words_guessed'] / user_stats['games_played']
+    print(f"Statistics for {username}:")
+    print(f"High Score: {user_stats['high_score']}")
+    print(f"Games Played: {user_stats['games_played']}")
+    print(f"Average Words Per Game: {average_words_per_game:.2f}")
+
+def main():
+    user_data = load_user_data()
+    username = create_or_get_user(user_data)
+    
+    # Example game logic
+    score = int(input("Enter the score for this game: "))
+    words_guessed = int(input("Enter the number of words guessed in this game: "))
+    
+    update_statistics(user_data, username, score, words_guessed)
+    save_user_data(user_data)
+    display_statistics(user_data, username)
+
+if __name__ == "__main__":
+    main()
+#Explanation:
+#Load and Save User Data:
+
+#load_user_data loads user data from a JSON file if it exists, otherwise returns an empty dictionary.
+#save_user_data saves the user data to a JSON file.
+#Create or Get User:
+
+#create_or_get_user prompts the user to enter a username and creates a new profile if the username does not exist in the user data.
+#Update Statistics:
+
+#update_statistics updates the user's statistics, including the number of games played, total words guessed, and high score.
+#Display Statistics:
+
+#display_statistics displays the user's statistics, including the high score, number of games played, and average words guessed per game.
+#Main Function:
+
+#The main function loads the user data, gets or creates a user, updates the statistics based on the game results, saves the updated user data, and displays the statistics.
