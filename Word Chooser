@@ -1,0 +1,7 @@
+import random
+def word_picker(words):
+    #Words will be a list of lists
+    all_words = words
+    random_word = random.choice(all_words)
+    
+    return random_word
