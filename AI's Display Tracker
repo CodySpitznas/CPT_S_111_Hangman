@@ -1,0 +1,111 @@
+def display_hangman(incorrect_guesses):
+    stages = [
+        """
+           -----
+           |   |
+               |
+               |
+               |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+               |
+               |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+           |   |
+               |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|   |
+               |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+               |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+          /    |
+               |
+        --------
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\\  |
+          / \\  |
+               |
+        --------
+        """
+    ]
+    return stages[incorrect_guesses]
+def guess_letters(word):
+    guessed_letters = set()
+    incorrect_guesses = 0
+    max_incorrect_guesses = 6
+    word_completion = ['_'] * len(word)
+    word_lower = word.lower()  # Convert the word to lowercase for case-insensitive comparison
+    score = 0
+
+    while incorrect_guesses < max_incorrect_guesses:
+        print(display_hangman(incorrect_guesses))
+        print(f"Score: {score}")
+        print(f"Word: {' '.join(word_completion)}")
+        guess_letter = input("Enter your guess: ").lower()
+
+        if len(guess_letter) != 1 or not guess_letter.isalpha():
+            print("Please enter a single letter.")
+            continue
+
+        if guess_letter in guessed_letters:
+            print("You have already guessed that letter. Try again.")
+            continue
+
+        guessed_letters.add(guess_letter)
+
+        if guess_letter in word_lower:
+            for i, letter in enumerate(word_lower):
+                if letter == guess_letter:
+                    word_completion[i] = word[i]  # Use the original case of the letter in the word
+            if '_' not in word_completion:
+                print(f"Congratulations! You guessed the word: {''.join(word_completion)}")
+                score += 1
+                incorrect_guesses = max(0, incorrect_guesses - 3)  # Decrease incorrect guesses by 3 or set to 0
+                break
+        else:
+            incorrect_guesses += 1
+            print(f"Incorrect guess. You have {max_incorrect_guesses - incorrect_guesses} guesses left.")
+
+    if incorrect_guesses == max_incorrect_guesses:
+        print(display_hangman(incorrect_guesses))
+        print(f"Sorry, you ran out of guesses. The word was: {word}")
+
+if __name__ == "__main__":
+    word_to_guess = "Example"  # Replace with a word of your choice or use a word picker function
+    guess_letters(word_to_guess)
