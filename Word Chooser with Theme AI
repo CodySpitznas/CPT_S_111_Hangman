@@ -86,3 +86,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+word_picker Function:
+
+This function takes a list of lists and flattens it into a single list of words.
+It then picks a random word from the flattened list using random.choice.
+select_theme Function:
+
+This function prompts the user to select a theme from the available themes.
+If the user presses Enter without choosing a theme, it returns None, indicating that words should be chosen from all themes combined.
+It validates the user's input and returns the selected theme or None.
+select_word_length Function:
+
+This function prompts the user to select the length of the word they want to guess.
+If a theme is selected, it shows the available lengths for that theme.
+If no theme is selected, it shows the available lengths across all themes.
+It validates the user's input and returns the selected word length.
+main Function:
+
+The main function handles the overall game flow.
+It prompts the user to select a theme and word length, picks a random word from the selected theme and length (or from all themes if no theme is selected), and displays the word to guess.
+It allows the user to play multiple rounds by asking if they want to play again.
