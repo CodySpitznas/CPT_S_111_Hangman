@@ -1,4 +1,9 @@
 # words.py
+'''
+Themes are holidays, animals, geography, fantasy, and history. The word lengths go from 3 to 10 characters. I strongly recommend the theme being a variable
+(one being 'all') selected at the start of the game, and then using the theme variable with the appropriate word length to pick the appropriate dictionary.
+If the theme is 'all,' then a random dictionary that corresponds to that length.
+'''
 
 # Dictionary of words of length 3 with the theme holidays
 holiday_words_3 = {
