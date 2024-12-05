@@ -373,6 +373,7 @@ themes = {
             "spellbooks": "Books containing collections of magical spells."
         }],
     'history': [
+        {
             # History Length 3
             "war": "A state of armed conflict between different countries or different groups within a country.",
             "era": "A long and distinct period of history with a particular feature or characteristic.",
