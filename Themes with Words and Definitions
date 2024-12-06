@@ -1,7 +1,7 @@
-# Define themes and their corresponding word lists. I made it into the format of a dictionary of lists of dictionaries. This may create a problem, but I am not sure.
+# Define themes and their corresponding word lists. I converted it into the format of dictionary-dictionary-dictionary.
 themes = {
-    'holidays': [
-        {
+    'holidays': {
+        3: {
             # Holiday Length 3
             "joy": "A feeling of great pleasure and happiness.",
             "elf": "A small, often mischievous creature from folklore.",
@@ -13,7 +13,8 @@ themes = {
             "joy": "A feeling of great pleasure and happiness.",
             "nut": "A fruit consisting of a hard or tough shell around an edible kernel.",
             "log": "A part of the trunk or a large branch of a tree that has fallen or been cut off."
-        }, {
+        },
+        4: {
             # Holiday Length 4
             "gift": "A thing given willingly to someone without payment; a present.",
             "snow": "Atmospheric water vapor frozen into ice crystals and falling in light white flakes.",
@@ -25,7 +26,8 @@ themes = {
             "wish": "A desire or hope for something to happen.",
             "yule": "An archaic term for Christmas, or the Christmas season.",
             "noel": "Another term for Christmas, especially in songs and carols."
-         }, {
+         },
+        5: {
             # Holiday Length 5
             "feast": "A large meal, typically one in celebration of something.",
             "candy": "A sweet food made with sugar or syrup combined with fruit, chocolate, or nuts.",
@@ -37,7 +39,8 @@ themes = {
             "cheer": "A shout of encouragement, praise, or joy.",
             "holly": "A shrub or tree with prickly dark green leaves, small white flowers, and red berries.",
             "elves": "Plural of elf, small, often mischievous creatures from folklore."
-        }, {
+        },
+        6: {
             # Holiday Length 6
             "turkey": "A large bird native to North America, traditionally eaten at Thanksgiving.",
             "candle": "A cylinder or block of wax or tallow with a central wick that is lit to produce light as it burns.",
@@ -49,7 +52,8 @@ themes = {
             "garland": "A wreath of flowers and leaves, worn on the head or hung as a decoration.",
             "jingle": "A light ringing sound such as that made by metal objects being shaken together.",
             "winter": "The coldest season of the year, in the northern hemisphere from December to February and in the southern hemisphere from June to August."
-        }, {
+        },
+        7: {
             # Holiday Length 7
             "holiday": "A day of festivity or recreation when no work is done.",
             "chimney": "A vertical channel or pipe that conducts smoke and combustion gases up from a fire or furnace.",
@@ -61,7 +65,8 @@ themes = {
             "pumpkin": "A large rounded orange-yellow fruit with a thick rind, edible flesh, and many seeds.",
             "rejoice": "Feel or show great joy or delight.",
             "snowman": "A representation of a human figure created with compressed snow."
-        }, {
+        },
+        8: {
             # Holiday Length 8
             "reindeer": "A deer of the tundra and subarctic regions of Eurasia and North America, both sexes of which have large branching antlers.",
             "snowfall": "An instance of snow falling.",
@@ -73,7 +78,8 @@ themes = {
             "celebrate": "Acknowledge (a significant or happy day or event) with a social gathering or enjoyable activity.",
             "firework": "A device containing gunpowder and other combustible chemicals which causes spectacular effects and explosions when ignited.",
             "snowflake": "A flake of snow, especially a feathery ice crystal, typically displaying delicate sixfold symmetry."
-        }, {
+        },
+        9: {
             # Holiday Length 9
             "christmas": "The annual Christian festival celebrating Christ's birth, held on December 25.",
             "festivity": "The celebration of something in a joyful and exuberant way.",
@@ -84,7 +90,8 @@ themes = {
             "snowflake": "A flake of snow, especially a feathery ice crystal, typically displaying delicate sixfold symmetry.",
             "fireworks": "A device containing gunpowder and other combustible chemicals which causes spectacular effects and explosions when ignited.",
             "snowstorm": "A heavy fall of snow, especially with a high wind."
-        }, {
+        },
+        10: {
             # Holiday Length 10
             "celebration": "The action of marking one's pleasure at an important event or occasion by engaging in enjoyable, typically social, activity.",
             "decoration": "The process or art of decorating or adorning something.",
@@ -96,9 +103,9 @@ themes = {
             "snowstorms": "A heavy fall of snow, especially with a high wind.",
             "reindeer": "A deer of the tundra and subarctic regions of Eurasia and North America, both sexes of which have large branching antlers.",
             "hollyberry": "The small, typically red fruit of the holly plant, often used in Christmas decorations."
-        }],
-    'animals': [
-        {
+        }},
+    'animals': {
+        3: {
             # Animals Length 3
             "cat": "A small domesticated carnivorous mammal with soft fur, a short snout, and retractile claws.",
             "dog": "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking, howling, or whining voice.",
@@ -110,7 +117,8 @@ themes = {
             "owl": "A nocturnal bird of prey with large forward-facing eyes surrounded by facial disks, a hooked beak, and typically a loud call.",
             "rat": "A rodent that resembles a large mouse, typically having a pointed snout and a long, sparsely haired tail.",
             "pig": "A domesticated mammal with a stout body, short legs, and a snout used for digging."
-        }, {
+        },
+        4: {
             # Animals Length 4
             "lion": "A large tawny-colored cat that lives in prides, found in Africa and northwestern India.",
             "wolf": "A wild carnivorous mammal which is the largest member of the dog family.",
@@ -122,7 +130,8 @@ themes = {
             "hawk": "A diurnal bird of prey with broad rounded wings and a long tail, typically taking prey by surprise with a short chase.",
             "mole": "A small burrowing mammal with dark velvety fur, a long muzzle, and very small eyes.",
             "goat": "A hardy domesticated ruminant animal that has backward curving horns and (in the male) a beard."
-        }, {
+        },
+        5: {
             # Animals Length 5
             "horse": "A large plant-eating domesticated mammal with solid hooves and a flowing mane and tail.",
             "sheep": "A domesticated ruminant animal with a thick woolly coat and (typically only in the male) curving horns.",
@@ -134,7 +143,8 @@ themes = {
             "koala": "A bearlike arboreal Australian marsupial that has thick gray fur and feeds on eucalyptus leaves.",
             "lemur": "An arboreal primate with a pointed snout and typically a long tail, found only in Madagascar.",
             "panda": "A large bearlike mammal with characteristic black-and-white markings, native to certain mountain forests in China."
-        }, {
+        },
+        6: {
             # Animals Length 6
             "monkey": "A small to medium-sized primate that typically has a long tail, most kinds of which live in trees in tropical countries.",
             "rabbit": "A burrowing, plant-eating mammal with long ears, long hind legs, and a short tail.",
@@ -146,7 +156,8 @@ themes = {
             "otter": "A semiaquatic fish-eating mammal of the weasel family, with an elongated body, dense fur, and webbed feet.",
             "badger": "A heavily built omnivorous nocturnal mammal of the weasel family, typically having a gray and black coat.",
             "weasel": "A small, slender, carnivorous mammal related to, but generally smaller than, the stoat."
-        }, {
+        },
+        7: {
             # Animals Length 7
             "giraffe": "A large African mammal with a very long neck and forelegs, having a coat patterned with brown patches separated by lighter lines.",
             "dolphin": "A small gregarious toothed whale that typically has a beaklike snout and a curved fin on the back.",
@@ -155,7 +166,8 @@ themes = {
             "chicken": "A domestic fowl kept for its eggs or meat, especially a young one.",
             "leopard": "A large, solitary cat that has a yellowish-brown or tawny coat with black spots and usually hunts at night.",
             "octopus": "A cephalopod mollusk with eight sucker-bearing arms, a soft saclike body, and no internal shell."
-        }, {
+        },
+        8: {
             # Animals Length 8
             "elephant": "A large herbivorous mammal with a trunk, native to Africa and southern Asia.",
             "kangaroo": "A large plant-eating marsupial with powerful hind legs and a long tail, native to Australia.",
@@ -165,7 +177,8 @@ themes = {
             "chipmunk": "A small striped rodent of the squirrel family, found in North America and Asia.",
             "flamingo": "A tall wading bird with mainly pink or scarlet plumage and long legs and neck.",
             "porpoise": "A small toothed whale with a low triangular dorsal fin and a blunt rounded snout."
-        }, {
+        },
+        9: {
             # Animals Length 9
             "kangaroos": "Large plant-eating marsupials with powerful hind legs and a long tail, native to Australia.",
             "dolphins": "Small gregarious toothed whales that typically have a beaklike snout and a curved fin on the back.",
@@ -177,7 +190,8 @@ themes = {
             "buffaloes": "Large, heavily built wild oxen with backswept horns, found mainly in the Old World tropics.",
             "penguins": "Large flightless seabirds of the southern hemisphere, with black upper parts and white underparts and wings developed into flippers for swimming underwater.",
             "leopards": "Large, solitary cats that have yellowish-brown or tawny coats with black spots and usually hunt at night."
-        }, {
+        },
+        10: {
             # Animals Length 10
             "chimpanzee": "A great ape with large ears, mainly black coloration, and lighter skin on the face, native to the forests of west and central Africa.",
             "crocodiles": "Large predatory semi-aquatic reptiles with long jaws, long tails, short legs, and a powerful bite.",
@@ -189,9 +203,9 @@ themes = {
             "grasshopper": "A plant-eating insect with long hind legs that are used for jumping and for producing a chirping sound.",
             "chameleons": "Old World lizards with the ability to change color, long sticky tongues, and eyes that move independently of each other.",
             "tarantulas": "Large, hairy spiders that are often kept as exotic pets."
-        }],
-    'geography': [
-        {
+        }},
+    'geography': {
+        3: {
             # Geography Length 3
             "bay": "A broad inlet of the sea where the land curves inward.",
             "cap": "A headland or promontory.",
@@ -203,7 +217,8 @@ themes = {
             "sea": "The expanse of salt water that covers most of the earth's surface.",
             "val": "A valley, especially in a poetic or literary context.",
             "zen": "A state of calm attentiveness in which one's actions are guided by intuition rather than by conscious effort."
-        }, {
+        },
+        4: {
             # Geography Length 4
             "lake": "A large body of water surrounded by land.",
             "hill": "A naturally raised area of land, not as high or craggy as a mountain.",
@@ -215,7 +230,8 @@ themes = {
             "peak": "The pointed top of a mountain.",
             "cove": "A small, sheltered bay in the shoreline of a sea, river, or lake.",
             "arch": "A natural rock formation where an arch has formed with an opening underneath."
-        }, {
+        },
+        5: {
             # Geography Length 5
             "river": "A large natural stream of water flowing in a channel to the sea, a lake, or another river.",
             "plain": "A large area of flat land with few trees.",
@@ -227,7 +243,8 @@ themes = {
             "basin": "A natural depression on the earth's surface, typically containing water.",
             "valley": "A low area of land between hills or mountains, typically with a river or stream flowing through it.",
             "globe": "A spherical representation of the earth or of the constellations with a map on the surface."
-        }, {
+        },
+        6: {
             # Geography Length 6
             "island": "A piece of land surrounded by water.",
             "desert": "A barren area of landscape where little precipitation occurs and consequently living conditions are hostile for plant and animal life.",
@@ -239,7 +256,8 @@ themes = {
             "valley": "A low area of land between hills or mountains, typically with a river or stream flowing through it.",
             "savanna": "A grassy plain in tropical and subtropical regions, with few trees.",
             "jungle": "An area of land overgrown with dense forest and tangled vegetation, typically in the tropics."
-        }, {
+        },
+        7: {
             # Geography Length 7
             "isthmus": "A narrow strip of land with sea on either side, forming a link between two larger areas of land.",
             "plateau": "An area of relatively level high ground.",
@@ -248,7 +266,8 @@ themes = {
             "prairie": "A large open area of grassland, especially in North America.",
             "harbour": "A place on the coast where vessels may find shelter, especially one protected from rough water by piers, jetties, and other artificial structures.",
             "canyon": "A deep gorge, typically one with a river flowing through it."
-        }, {
+        },
+        8: {
             # Geography Length 8
             "mountain": "A large natural elevation of the earth's surface rising abruptly from the surrounding level; a large steep hill.",
             "plateaus": "An area of relatively level high ground.",
@@ -260,7 +279,8 @@ themes = {
             "lowlands": "An area of land that is lower than the land around it.",
             "badlands": "Extensive tracts of heavily eroded, uncultivable land with little vegetation.",
             "highland": "An area of high or mountainous land."
-        }, {
+        },
+        9: {
             # Geography Length 9
             "continent": "Any of the world's main continuous expanses of land (e.g., Africa, Asia, Europe).",
             "landscape": "All the visible features of an area of land, often considered in terms of their aesthetic appeal.",
@@ -271,7 +291,8 @@ themes = {
             "lowlands": "An area of land that is lower than the land around it.",
             "badlands": "Extensive tracts of heavily eroded, uncultivable land with little vegetation.",
             "highlands": "An area of high or mountainous land."
-        }, {
+        },
+        10: {
             # Geography Length 10
             "archipelago": "A group of islands.",
             "peninsulas": "A piece of land almost surrounded by water or projecting out into a body of water.",
@@ -283,9 +304,9 @@ themes = {
             "badlanders": "People who live in badlands, areas of heavily eroded, uncultivable land with little vegetation.",
             "mountainous": "Having many mountains.",
             "geography": "The study of the physical features of the earth and its atmosphere."
-        }],
-    'fantasy': [
-        {
+        }},
+    'fantasy': {
+        3: {
             # Fantasy Length 3
             "orc": "A mythical creature, typically depicted as a brutish, aggressive humanoid.",
             "elf": "A small, often mischievous creature from folklore.",
@@ -297,7 +318,8 @@ themes = {
             "jot": "A giant from Norse mythology.",
             "gob": "A goblin, a small, grotesque, monstrous creature.",
             "tup": "A small, mischievous spirit or sprite."
-        }, {
+        },
+        4: {
             # Fantasy Length 4
             "mage": "A magician or learned person.",
             "troll": "A mythical, cave-dwelling being depicted as either a giant or a dwarf.",
@@ -309,7 +331,8 @@ themes = {
             "djin": "A supernatural being in Arabian mythology.",
             "goblin": "A mischievous, ugly creature resembling a dwarf.",
             "wyrm": "A mythical dragon or serpent."
-        }, {
+        },
+        5: {
             # Fantasy Length 5
             "magic": "The power of apparently influencing events by using mysterious or supernatural forces.",
             "witch": "A woman thought to have magic powers, especially evil ones.",
@@ -321,7 +344,8 @@ themes = {
             "beast": "A large, dangerous animal.",
             "troll": "A mythical, cave-dwelling being depicted as either a giant or a dwarf.",
             "sword": "A weapon with a long metal blade and a hilt with a handguard, used for thrusting or striking."
-        }, {
+        },
+        6: {
             # Fantasy Length 6
             "wizard": "A man who has magical powers.",
             "dragon": "A large, serpentine legendary creature that appears in the folklore of many cultures.",
@@ -329,7 +353,8 @@ themes = {
             "spells": "A form of words used as a magical charm or incantation.",
             "knight": "A man who served his sovereign or lord as a mounted soldier in armor.",
             "sorcer": "A person who claims or is believed to have magic powers; a wizard."
-        }, {
+        },
+        7: {
             # Fantasy Length 7
             "unicorn": "A mythical animal typically represented as a horse with a single straight horn projecting from its forehead.",
             "phoenix": "A mythical bird that regenerates or is otherwise born again.",
@@ -338,7 +363,8 @@ themes = {
             "sorcery": "The use of magic, especially black magic.",
             "warlock": "A man who practices witchcraft; a sorcerer.",
             "dragons": "Large, serpentine legendary creatures that appear in the folklore of many cultures."
-        }, {
+        },
+        8: {
             # Fantasy Length 8
             "unicorns": "Mythical animals typically represented as horses with single straight horns projecting from their foreheads.",
             "phoenixes": "Mythical birds that regenerate or are otherwise born again.",
@@ -347,7 +373,8 @@ themes = {
             "sorcery": "The use of magic, especially black magic.",
             "warlocks": "Men who practice witchcraft; sorcerers.",
             "dragons": "Large, serpentine legendary creatures that appear in the folklore of many cultures."
-        }, {
+        },
+        9: {
             # Fantasy Length 9
             "sorcerers": "People who claim or are believed to have magical powers; wizards.",
             "spellbook": "A book containing a collection of magical spells.",
@@ -359,7 +386,8 @@ themes = {
             "warhammer": "A weapon consisting of a hammer-like head mounted on a long handle, used in medieval warfare.",
             "spellbound": "Having your attention fixated as though by a spell.",
             "dragonborn": "A race of humanoid dragons in fantasy settings, often possessing dragon-like abilities."
-        }, {
+        },
+        10: {
             # Fantasy Length 10
             "spellbound": "Having your attention fixated as though by a spell.",
             "dragonborn": "A race of humanoid dragons in fantasy settings, often possessing dragon-like abilities.",
@@ -371,9 +399,9 @@ themes = {
             "warhammers": "Weapons consisting of hammer-like heads mounted on long handles, used in medieval warfare.",
             "sorceresses": "Women who practice sorcery; female sorcerers.",
             "spellbooks": "Books containing collections of magical spells."
-        }],
-    'history': [
-        {
+        }},
+    'history': {
+        3: {
             # History Length 3
             "war": "A state of armed conflict between different countries or different groups within a country.",
             "era": "A long and distinct period of history with a particular feature or characteristic.",
@@ -385,7 +413,8 @@ themes = {
             "hut": "A small, simple, single-story house or shelter.",
             "urn": "A tall, rounded vase with a base, often used in historical contexts for storing ashes.",
             "ink": "A colored fluid used for writing, drawing, printing, or duplicating."
-        }, {
+        },
+        4: {
             # History Length 4
             "king": "The male ruler of an independent state, especially one who inherits the position by right of birth.",
             "duke": "A male holding the highest hereditary title in the British and certain other peerages.",
@@ -397,7 +426,8 @@ themes = {
             "scroll": "A roll of parchment or paper for writing or painting on.",
             "spear": "A weapon with a pointed tip, typically of steel, and a long shaft, used for thrusting or throwing.",
             "tomb": "A large vault, typically an underground one, for burying the dead."
-        }, {
+        },
+        5: {
             # History Length 5
             "sword": "A weapon with a long metal blade and a hilt with a handguard, used for thrusting or striking.",
             "armor": "The metal coverings formerly worn by soldiers or warriors to protect the body in battle.",
@@ -409,7 +439,8 @@ themes = {
             "treaty": "A formally concluded and ratified agreement between countries.",
             "relic": "An object surviving from an earlier time, especially one of historical or sentimental interest.",
             "feast": "A large meal, typically one in celebration of something."
-        }, {
+        },
+        6: {
             # History Length 6
             "castle": "A large building typically of the medieval period, fortified against attack.",
             "empire": "An extensive group of states or countries under a single supreme authority.",
@@ -421,7 +452,8 @@ themes = {
             "weapon": "A thing designed or used for inflicting bodily harm or physical damage.",
             "battle": "A sustained fight between large organized armed forces.",
             "dynasty": "A line of hereditary rulers of a country."
-        }, {
+        },
+        7: {
             # History Length 7
             "knights": "A man who served his sovereign or lord as a mounted soldier in armor.",
             "crusade": "A medieval military expedition, one of a series made by Europeans to recover the Holy Land from the Muslims.",
@@ -433,7 +465,8 @@ themes = {
             "treaty": "A formally concluded and ratified agreement between countries.",
             "plague": "A contagious bacterial disease characterized by fever and delirium.",
             "castle": "A large building typically of the medieval period, fortified against attack."
-        }, {
+        },
+        8: {
             # History Length 8
             "medieval": "Relating to the Middle Ages.",
             "crusades": "A series of medieval military expeditions made by Europeans to recover the Holy Land from the Muslims.",
@@ -445,7 +478,8 @@ themes = {
             "explorer": "A person who explores an unfamiliar area; an adventurer.",
             "dynastic": "Relating to a line of hereditary rulers of a country.",
             "fortress": "A military stronghold, especially a strongly fortified town fit for a large garrison."
-        }, {
+        },
+        9: {
             # History Length 9
             "crusaders": "A series of medieval military expeditions made by Europeans to recover the Holy Land from the Muslims.",
             "monarchies": "Forms of government with a monarch at the head.",
@@ -457,7 +491,8 @@ themes = {
             "dynasties": "Lines of hereditary rulers of a country.",
             "fortresses": "Military strongholds, especially strongly fortified towns fit for large garrisons.",
             "medievals": "Relating to the Middle Ages."
-        }, {
+        },
+        10: {
             # History Length 10
             "crusaders": "A series of medieval military expeditions made by Europeans to recover the Holy Land from the Muslims.",
             "monarchies": "Forms of government with a monarch at the head.",
@@ -469,5 +504,5 @@ themes = {
             "dynasties": "Lines of hereditary rulers of a country.",
             "fortresses": "Military strongholds, especially strongly fortified towns fit for large garrisons.",
             "medievals": "Relating to the Middle Ages."
-        }]
+        }}
     }
