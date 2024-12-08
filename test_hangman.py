@@ -35,15 +35,15 @@ class TestHangmanGame(unittest.TestCase):
         mock_showinfo.assert_called_with("Creating Account", "Creating account for newuser.")
         self.assertIn("newuser", self.game.user_data)
 
-    @patch('random.choice', return_value=("apple", "A round fruit with red or green skin"))
+    @patch('random.choice', return_value=("feast", "A large meal, typically one in celebration of something."))
     def test_start_game(self, mock_choice):
-        self.game.theme_var.set("fruits")
+        self.game.theme_var.set("holidays")
         self.game.length_var.set("5")
         self.game.start_game()
-        self.assertEqual(self.game.theme, "fruits")
+        self.assertEqual(self.game.theme, "holidays")
         self.assertEqual(self.game.word_length, 5)
-        self.assertEqual(self.game.word_to_guess, "apple")
-        self.assertEqual(self.game.word_description, "A round fruit with red or green skin")
+        self.assertEqual(self.game.word_to_guess, "feast")
+        self.assertEqual(self.game.word_description, "A large meal, typically one in celebration of something.")
         self.assertEqual(self.game.word_completion, ['_', '_', '_', '_', '_'])
         self.assertEqual(self.game.incorrect_guesses, 0)
 

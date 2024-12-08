@@ -3,26 +3,84 @@ from tkinter import messagebox
 import random
 import json
 import os
+from word_dictionaries import *
 
 # Define themes and their corresponding word lists with descriptions
+# themes = {
+#     'fruits': {
+#         3: {'fig': 'A small fruit with a sweet taste', 'pea': 'A small round green vegetable', 'nut': 'A hard-shelled fruit'},
+#         4: {'kiwi': 'A small brown fruit with green flesh', 'plum': 'A small purple fruit', 'pear': 'A green or yellow fruit'},
+#         5: {'apple': 'A round fruit with red or green skin', 'grape': 'A small round fruit used to make wine', 'mango': 'A tropical fruit with orange flesh'},
+#         6: {'banana': 'A long yellow fruit', 'orange': 'A round citrus fruit', 'tomato': 'A red fruit often used as a vegetable'}
+#     },
+#     'animals': {
+#         3: {'cat': 'A small domesticated carnivorous mammal', 'dog': 'A domesticated carnivorous mammal', 'bat': 'A nocturnal flying mammal'},
+#         4: {'lion': 'A large wild cat with a mane', 'wolf': 'A wild carnivorous mammal', 'bear': 'A large heavy mammal with thick fur'},
+#         5: {'zebra': 'An African wild horse with black-and-white stripes', 'tiger': 'A large wild cat with a striped coat', 'horse': 'A large domesticated mammal used for riding'},
+#         6: {'monkey': 'A small to medium-sized primate', 'giraffe': 'A tall African mammal with a long neck', 'rabbit': 'A small burrowing mammal with long ears'}
+#     },
+#     'colors': {
+#         3: {'red': 'The color of blood', 'tan': 'A light brown color', 'sky': 'The color of the sky on a clear day'},
+#         4: {'blue': 'The color of the ocean', 'pink': 'A pale red color', 'gold': 'A yellow precious metal'},
+#         5: {'green': 'The color of grass', 'white': 'The color of snow', 'black': 'The color of coal'},
+#         6: {'yellow': 'The color of the sun', 'orange': 'A color between red and yellow', 'purple': 'A color between red and blue'}
+#     }
+# }
 themes = {
-    'fruits': {
-        3: {'fig': 'A small fruit with a sweet taste', 'pea': 'A small round green vegetable', 'nut': 'A hard-shelled fruit'},
-        4: {'kiwi': 'A small brown fruit with green flesh', 'plum': 'A small purple fruit', 'pear': 'A green or yellow fruit'},
-        5: {'apple': 'A round fruit with red or green skin', 'grape': 'A small round fruit used to make wine', 'mango': 'A tropical fruit with orange flesh'},
-        6: {'banana': 'A long yellow fruit', 'orange': 'A round citrus fruit', 'tomato': 'A red fruit often used as a vegetable'}
+    'holidays':
+    {
+        3: holiday_words_3, 
+        4: holiday_words_4, 
+        5: holiday_words_5, 
+        6: holiday_words_6, 
+        7: holiday_words_7, 
+        8: holiday_words_8, 
+        9: holiday_words_9, 
+        10: holiday_words_10
     },
-    'animals': {
-        3: {'cat': 'A small domesticated carnivorous mammal', 'dog': 'A domesticated carnivorous mammal', 'bat': 'A nocturnal flying mammal'},
-        4: {'lion': 'A large wild cat with a mane', 'wolf': 'A wild carnivorous mammal', 'bear': 'A large heavy mammal with thick fur'},
-        5: {'zebra': 'An African wild horse with black-and-white stripes', 'tiger': 'A large wild cat with a striped coat', 'horse': 'A large domesticated mammal used for riding'},
-        6: {'monkey': 'A small to medium-sized primate', 'giraffe': 'A tall African mammal with a long neck', 'rabbit': 'A small burrowing mammal with long ears'}
+    'animals':
+    {
+        3: animal_words_3,
+        4: animal_words_4,
+        5: animal_words_5,
+        6: animal_words_6,
+        7: animal_words_7,
+        8: animal_words_8,
+        9: animal_words_9,
+        10: animal_words_10
     },
-    'colors': {
-        3: {'red': 'The color of blood', 'tan': 'A light brown color', 'sky': 'The color of the sky on a clear day'},
-        4: {'blue': 'The color of the ocean', 'pink': 'A pale red color', 'gold': 'A yellow precious metal'},
-        5: {'green': 'The color of grass', 'white': 'The color of snow', 'black': 'The color of coal'},
-        6: {'yellow': 'The color of the sun', 'orange': 'A color between red and yellow', 'purple': 'A color between red and blue'}
+    'geography':
+    {
+        3: geography_words_3,
+        4: geography_words_4,
+        5: geography_words_5,
+        6: geography_words_6,
+        7: geography_words_7,
+        8: geography_words_8,
+        9: geography_words_9,
+        10: geography_words_10
+    },
+    'fantasy':
+    {
+        3: fantasy_words_3,
+        4: fantasy_words_4,
+        5: fantasy_words_5,
+        6: fantasy_words_6,
+        7: fantasy_words_7,
+        8: fantasy_words_8,
+        9: fantasy_words_9,
+        10: fantasy_words_10
+    },
+    'history':
+    {
+        3: history_words_3,
+        4: history_words_4,
+        5: history_words_5,
+        6: history_words_6,
+        7: history_words_7,
+        8: history_words_8,
+        9: history_words_9,
+        10: history_words_10
     }
 }
 
