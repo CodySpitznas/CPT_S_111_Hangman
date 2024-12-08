@@ -1,3 +1,12 @@
+'''
+- Asher Wu, Cody Spitznas
+- 12/9/24
+- CptS 111, Fall 2024
+- Hangman Marathon
+- This project simulates the game of Hangman.
+- Modules used: json, os, tkinter, game_words_setup, game_hangman_display
+'''
+
 import json
 import os
 import tkinter as tk
@@ -199,7 +208,7 @@ class HangmanGame:
         self.guess_button.pack_forget()
         self.hint_button.pack_forget()
         self.alphabet_label.pack_forget()
-        
+
     # Changes display when the user signs in
     def show_login_screen(self):
         self.username_entry.pack()

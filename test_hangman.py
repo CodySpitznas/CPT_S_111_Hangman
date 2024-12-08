@@ -1,3 +1,12 @@
+'''
+- Asher Wu, Cody Spitznas
+- 12/9/24
+- CptS 111, Fall 2024
+- Hangman Marathon
+- This project simulates the game of Hangman.
+- Modules used: unittest, tkinter, game
+'''
+
 import unittest
 from unittest.mock import patch, MagicMock
 import tkinter as tk

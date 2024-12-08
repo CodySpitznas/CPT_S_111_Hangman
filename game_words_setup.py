@@ -1,3 +1,12 @@
+'''
+- Asher Wu, Cody Spitznas
+- 12/9/24
+- CptS 111, Fall 2024
+- Hangman Marathon
+- This project simulates the game of Hangman.
+- Modules used: random, word_dictionaries
+'''
+
 import random
 from word_dictionaries import *
 
