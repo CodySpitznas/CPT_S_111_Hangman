@@ -1,4 +1,12 @@
-# words.py
+'''
+- Asher Wu, Cody Spitznas
+- 12/9/24
+- CptS 111, Fall 2024
+- Hangman Marathon
+- This project simulates the game of Hangman.
+- Modules used: none
+'''
+
 '''
 Themes are holidays, animals, geography, fantasy, and history. The word lengths go from 3 to 10 characters. I strongly recommend the theme being a variable
 (one being 'all') selected at the start of the game, and then using the theme variable with the appropriate word length to pick the appropriate dictionary.
