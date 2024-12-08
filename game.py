@@ -225,7 +225,7 @@ class HangmanGame:
         self.theme_menu = tk.OptionMenu(self.scrollable_frame, self.theme_var, *themes.keys())
 
         self.length_label = tk.Label(self.scrollable_frame, text="Select word length:")
-        self.length_menu = tk.OptionMenu(self.scrollable_frame, self.length_var, 3, 4, 5, 6)
+        self.length_menu = tk.OptionMenu(self.scrollable_frame, self.length_var, 3, 4, 5, 6, 7, 8, 9, 10)
 
         self.start_button = tk.Button(self.scrollable_frame, text="Start Game", command=self.start_game)
 
@@ -409,6 +409,7 @@ class HangmanGame:
         self.guess_entry.pack_forget()
         self.guess_button.pack_forget()
         self.hint_button.pack_forget()
+        self.alphabet_label.pack_forget()
 
         # Show the final stats
         self.display_final_stats()
